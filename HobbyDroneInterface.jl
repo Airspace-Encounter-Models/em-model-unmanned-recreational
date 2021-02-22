@@ -10,11 +10,11 @@ using Random
 include("CreateHobbyDroneTrajectories.jl")
 
 # Load the BayesNets (note these are loaded in pieces because JLD2 was being dumb)
-@load "iBN_data.jld2"
+@load "iBN_data_v2.jld2"
 dag = SimpleDiGraph{Int64}(ne, fadjlist, badjlist)
 iBN = BayesNet(dag, cpds, name_to_index)
 
-@load "tBN_data.jld2"
+@load "tBN_data_v2.jld2"
 dag = SimpleDiGraph{Int64}(ne, fadjlist, badjlist)
 tBN = BayesNet(dag, cpds, name_to_index)
 
